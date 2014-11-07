@@ -1,7 +1,8 @@
 body {
-	color: lime;
+	background-color: lime;
 }
 
 @media (max-width: 320px) {
   html { background: red; }
 }
+
