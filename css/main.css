@@ -6,3 +6,6 @@ body {
   html { background: red; }
 }
 
+@media (min-width: 1024px) {
+  html { background: blue; }
+}
