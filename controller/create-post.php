@@ -11,7 +11,7 @@
 	echo "<p>Post: $post</p>";
 	//this is just to echo out post
 
-	$query = $connection->query("INSERT INTO posts SET title = '$title', post = '$post'");
+	$query = $_SESSION["connection"]->query("INSERT INTO posts SET title = '$title', post = '$post'");
 	//this connection goes into query and inserts into posts and sets the title and than posts it.
 
 	if($query) {
@@ -19,6 +19,6 @@
 	}
 	//if there is nothing wrong, it will say that the post went through.
 	else {
-		echo "<p>$connection->error</p>";
+		echo "<p>" . $_SESSION["connection"]->error . "</p>";
 	}
 	//if the connection isn't going through, it will say it has an error.
