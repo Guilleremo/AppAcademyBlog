@@ -8,6 +8,8 @@
 	//weve created global variables that can be accessed through out our databse class.
 	//weve set the visibilty and they can only be accessed from the class and we wont be able to access them from anywhere else.
 	//That way when we create the new object, these variable would be hidden and no one would be able to modify them.
+	$this->connection = new mysqli($host, $username, $password);
+	//connection to mysqli with the host, username, and password.
 
 	public function __construct($host, $username, $password, $database) {
 		$this->host = $host;
@@ -16,6 +18,26 @@
 		$this->database = $database;
 		//we want to store the information within our objectthat way we have access to it through out our object.
 		//we need to assign the information toour global variables.
+	}
+	if($connection->connect_error) {
+		die("<p>Error: " . $this->connection->connect_error . "</p>");
+		//if there is an error, it will say to check for an error.
+	}
+	
+	$exists = $this->connection->select_db($database);
+	//if the variables exist, it will do the connection to database.
+
+	if(!$exists) {
+		$query = $this->connection->query("CREATE DATABASE $database");
+		if($query) {
+			echo "<p>Successfully created database: " . $database . "</p>";
+			//this is an if/else statement and if I have not created the variable $datatbase, it will say "CREATE DATABASE $database".
+			//If I do create the variable database, than it will say "Successfully created database".
+		}
+	}
+	else {
+		echo "<p>Database already exists.</p>";
+		//If the databse is already made, than it will say "Database already exists".
 	}
 
 	public function openConnection() {

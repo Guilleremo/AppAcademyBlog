@@ -1,8 +1,6 @@
 <?php
 	require_once(__DIR__ . "/../model/config.php");
 
-	$connection = new mysqli($host, $username, $password, $database);
-
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 	//This post means it is receiving data called title and filtering it
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
@@ -24,5 +22,3 @@
 		echo "<p>$connection->error</p>";
 	}
 	//if the connection isn't going through, it will say it has an error.
-
-	$connection->close();
