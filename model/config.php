@@ -1,6 +1,6 @@
 <?php 
 	require_once(__DIR__ . "/database.php");
-	session_start()
+	session_start();
 	//its gonna start a session for us on our webpage.
 
 	$path = "/phpproject/";
