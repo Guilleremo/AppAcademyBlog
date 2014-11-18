@@ -15,7 +15,7 @@
 		$this->username = $username;
 		$this->password = $password;
 		$this->database = $database;
-		//we want to store the information within our objectthat way we have access to it through out our object.
+		//we want to store the information within our object that way we have access to it through out our object.
 		//we need to assign the information toour global variables.
 		$this->connection = new mysqli($host, $username, $password);
 		//connection to mysqli with the host, username, and password.
@@ -56,6 +56,8 @@
 	public function closeConnection() {
 		//isset means that its checking if the variable has been set or not.
 		//its checking wether or not there is something within that variable.
+		//function are speacial coding that we write that can perform operatios over and over.
+		//functions can be used to store data and process the data.
 		if(isset($this->connection)) {
 			$this->connection->close();
 		}
