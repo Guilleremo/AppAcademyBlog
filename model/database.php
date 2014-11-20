@@ -65,8 +65,15 @@
 
 	public function query($string) {
 		$this->openConnection();
+		//calling on public function and executing lines above 
 
 		$query = $this->connection->query($string);
+		//this is gonna execute a query on our database.
+		//need to access query function
+		//how we are able to refactor code
+		//using a variable
+		//once weve queried the database were gping to get result
+		//that will be stored in query
 
 		if(!$query) {
 			$this->error = $this->connection->error;
@@ -75,8 +82,10 @@
 		$this->closeConnection();
 
 		return $query;
+		//returning the result
+		//easier to maintain
 	}
 	//all of these functions, if we dont put them here, then we would have to repeat the code many times 
 	//and it would be alot of the same code.
-	//we would be putting like 10-15 lines of the same code everywhere.
+	//we would be putting like 10-15 lines of the same code all over the place.
 }
