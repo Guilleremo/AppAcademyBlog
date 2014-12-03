@@ -7,7 +7,7 @@ body {
 }
 /*this is the media querie for the IPhone*/
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   html { background: blue; }
 }
 /*this is the media querie for the ipad*/
