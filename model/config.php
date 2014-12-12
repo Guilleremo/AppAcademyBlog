@@ -2,6 +2,7 @@
 	require_once(__DIR__ . "/database.php");
 	session_start();
 	//its gonna start a session for us on our webpage.
+	session_regenerate_id(true);
 
 	$path = "/phpproject/";
 	

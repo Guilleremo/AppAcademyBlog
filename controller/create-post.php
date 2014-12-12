@@ -5,6 +5,8 @@
 	//This post means it is receiving data called title and filtering it
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 	//this post means it is receiving data called post and is filtering it
+	$date = new DateTime('today');
+	$time = new DateTime('America/Los_Angeles');
 
 	echo "<p>Title: $title</p>";
 	//this is just to echo out title
@@ -16,6 +18,7 @@
 
 	if($query) {
 		echo "<p>Successfully inserted post: $title</p>";
+		echo "Posted on: " . $date->format("M/D/Y") . " at " . $time->format("g:i");
 	}
 	//if there is nothing wrong, it will say that the post went through.
 	else {
